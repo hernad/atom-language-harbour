@@ -19,51 +19,51 @@
     'include': '#comments'
   }
   {
-    'match': '\\b(break|case|continue|default|do|else|for|goto|if|_Pragma|return|switch|while)\\b'
-    'name': 'keyword.control.c'
+    'match': '\\b(CLASS|FUNCTION|SWITCH|PROCEDURE|IF|ELSEIF|EXIT|ENDCASE|END|ENDIF|RETURN)\\b'
+    'name': 'keyword.control.prg'
   }
   {
-    'match': '\\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\b'
-    'name': 'storage.type.c'
+    'match': '\\b(LOCAL|PRIVATE|privateasm|int|long|short|signed|struct|typedef|union|unsigned|void)\\b'
+    'name': 'storage.type.prg'
   }
   {
     'match': '\\b(const|extern|register|restrict|static|volatile|inline)\\b'
-    'name': 'storage.modifier.c'
+    'name': 'storage.modifier.prg'
   }
   {
     'comment': 'common C constant naming idiom -- kConstantVariable'
     'match': '\\bk[A-Z]\\w*\\b'
-    'name': 'constant.other.variable.mac-classic.c'
+    'name': 'constant.other.variable.mac-classic.prg'
   }
   {
     'match': '\\bg[A-Z]\\w*\\b'
-    'name': 'variable.other.readwrite.global.mac-classic.c'
+    'name': 'variable.other.readwrite.global.mac-classic.prg'
   }
   {
     'match': '\\bs[A-Z]\\w*\\b'
-    'name': 'variable.other.readwrite.static.mac-classic.c'
+    'name': 'variable.other.readwrite.static.mac-classic.prg'
   }
   {
-    'match': '\\b(NULL|true|false|TRUE|FALSE)\\b'
-    'name': 'constant.language.c'
+    'match': '\\b(NIL|.T.|.F.)\\b'
+    'name': 'constant.language.prg'
   }
   {
     'include': '#sizeof'
   }
   {
     'match': '\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b'
-    'name': 'constant.numeric.c'
+    'name': 'constant.numeric.prg'
   }
   {
     'begin': '"'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.c'
+        'name': 'punctuation.definition.string.begin.prg'
     'end': '"'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.c'
-    'name': 'string.quoted.double.c'
+        'name': 'punctuation.definition.string.end.prg'
+    'name': 'string.quoted.double.prg'
     'patterns': [
       {
         'include': '#string_escaped_char'
@@ -77,12 +77,12 @@
     'begin': '\''
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.c'
+        'name': 'punctuation.definition.string.begin.prg'
     'end': '\''
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.c'
-    'name': 'string.quoted.single.c'
+        'name': 'punctuation.definition.string.end.prg'
+    'name': 'string.quoted.single.prg'
     'patterns': [
       {
         'include': '#string_escaped_char'
@@ -93,23 +93,23 @@
     'begin': '(?x)\n        \t\t^\\s*\\#\\s*(define)\\s+             # define\n        \t\t((?<id>[a-zA-Z_][a-zA-Z0-9_]*))  # macro name\n        \t\t(?:                              # and optionally:\n        \t\t    (\\()                         # an open parenthesis\n        \t\t        (\n        \t\t            \\s* \\g<id> \\s*       # first argument\n        \t\t            ((,) \\s* \\g<id> \\s*)*  # additional arguments\n        \t\t            (?:\\.\\.\\.)?          # varargs ellipsis?\n        \t\t        )\n        \t\t    (\\))                         # a close parenthesis\n        \t\t)?\n        \t'
     'beginCaptures':
       '1':
-        'name': 'keyword.control.import.define.c'
+        'name': 'keyword.control.import.define.prg'
       '2':
-        'name': 'entity.name.function.preprocessor.c'
+        'name': 'entity.name.function.preprocessor.prg'
       '4':
-        'name': 'punctuation.definition.parameters.begin.c'
+        'name': 'punctuation.definition.parameters.begin.prg'
       '5':
-        'name': 'variable.parameter.preprocessor.c'
+        'name': 'variable.parameter.preprocessor.prg'
       '7':
-        'name': 'punctuation.separator.parameters.c'
+        'name': 'punctuation.separator.parameters.prg'
       '8':
-        'name': 'punctuation.definition.parameters.end.c'
+        'name': 'punctuation.definition.parameters.end.prg'
     'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
-    'name': 'meta.preprocessor.macro.c'
+    'name': 'meta.preprocessor.macro.prg'
     'patterns': [
       {
         'match': '(?>\\\\\\s*\\n)'
-        'name': 'punctuation.separator.continuation.c'
+        'name': 'punctuation.separator.continuation.prg'
       }
       {
         'include': '$base'
@@ -120,13 +120,13 @@
     'begin': '^\\s*#\\s*(error|warning)\\b'
     'captures':
       '1':
-        'name': 'keyword.control.import.error.c'
+        'name': 'keyword.control.import.error.prg'
     'end': '(?<!\\\\)(?=\\n)'
-    'name': 'meta.preprocessor.diagnostic.c'
+    'name': 'meta.preprocessor.diagnostic.prg'
     'patterns': [
       {
         'match': '(?>\\\\\\s*\\n)'
-        'name': 'punctuation.separator.continuation.c'
+        'name': 'punctuation.separator.continuation.prg'
       }
     ]
   }
@@ -134,35 +134,35 @@
     'begin': '^\\s*#\\s*(include|import)\\b\\s+'
     'captures':
       '1':
-        'name': 'keyword.control.import.include.c'
+        'name': 'keyword.control.import.include.prg'
     'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
-    'name': 'meta.preprocessor.c.include'
+    'name': 'meta.preprocessor.prg.include'
     'patterns': [
       {
         'match': '(?>\\\\\\s*\\n)'
-        'name': 'punctuation.separator.continuation.c'
+        'name': 'punctuation.separator.continuation.prg'
       }
       {
         'begin': '"'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.c'
+            'name': 'punctuation.definition.string.begin.prg'
         'end': '"'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.c'
-        'name': 'string.quoted.double.include.c'
+            'name': 'punctuation.definition.string.end.prg'
+        'name': 'string.quoted.double.include.prg'
       }
       {
         'begin': '<'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.c'
+            'name': 'punctuation.definition.string.begin.prg'
         'end': '>'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.c'
-        'name': 'string.quoted.other.lt-gt.include.c'
+            'name': 'punctuation.definition.string.end.prg'
+        'name': 'string.quoted.other.lt-gt.include.prg'
       }
     ]
   }
@@ -173,40 +173,19 @@
     'begin': '^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef)\\b'
     'captures':
       '1':
-        'name': 'keyword.control.import.c'
+        'name': 'keyword.control.import.prg'
     'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
-    'name': 'meta.preprocessor.c'
+    'name': 'meta.preprocessor.prg'
     'patterns': [
       {
         'match': '(?>\\\\\\s*\\n)'
-        'name': 'punctuation.separator.continuation.c'
+        'name': 'punctuation.separator.continuation.prg'
       }
     ]
   }
   {
     'match': '\\b(u_char|u_short|u_int|u_long|ushort|uint|u_quad_t|quad_t|qaddr_t|caddr_t|daddr_t|dev_t|fixpt_t|blkcnt_t|blksize_t|gid_t|in_addr_t|in_port_t|ino_t|key_t|mode_t|nlink_t|id_t|pid_t|off_t|segsz_t|swblk_t|uid_t|id_t|clock_t|size_t|ssize_t|time_t|useconds_t|suseconds_t)\\b'
-    'name': 'support.type.sys-types.c'
-  }
-  {
-    'match': '\\b(pthread_attr_t|pthread_cond_t|pthread_condattr_t|pthread_mutex_t|pthread_mutexattr_t|pthread_once_t|pthread_rwlock_t|pthread_rwlockattr_t|pthread_t|pthread_key_t)\\b'
-    'name': 'support.type.pthread.c'
-  }
-  {
-    'match': '\\b(int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|int_least8_t|int_least16_t|int_least32_t|int_least64_t|uint_least8_t|uint_least16_t|uint_least32_t|uint_least64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|uint_fast8_t|uint_fast16_t|uint_fast32_t|uint_fast64_t|intptr_t|uintptr_t|intmax_t|intmax_t|uintmax_t|uintmax_t)\\b'
-    'name': 'support.type.stdint.c'
-  }
-  {
-    'match': '\\b(noErr|kNilOptions|kInvalidID|kVariableLengthArray)\\b'
-    'name': 'support.constant.mac-classic.c'
-  }
-  {
-    'match': '\\b(AbsoluteTime|Boolean|Byte|ByteCount|ByteOffset|BytePtr|CompTimeValue|ConstLogicalAddress|ConstStrFileNameParam|ConstStringPtr|Duration|Fixed|FixedPtr|Float32|Float32Point|Float64|Float80|Float96|FourCharCode|Fract|FractPtr|Handle|ItemCount|LogicalAddress|OptionBits|OSErr|OSStatus|OSType|OSTypePtr|PhysicalAddress|ProcessSerialNumber|ProcessSerialNumberPtr|ProcHandle|Ptr|ResType|ResTypePtr|ShortFixed|ShortFixedPtr|SignedByte|SInt16|SInt32|SInt64|SInt8|Size|StrFileName|StringHandle|StringPtr|TimeBase|TimeRecord|TimeScale|TimeValue|TimeValue64|UInt16|UInt32|UInt64|UInt8|UniChar|UniCharCount|UniCharCountPtr|UniCharPtr|UnicodeScalarValue|UniversalProcHandle|UniversalProcPtr|UnsignedFixed|UnsignedFixedPtr|UnsignedWide|UTF16Char|UTF32Char|UTF8Char)\\b'
-    'name': 'support.type.mac-classic.c'
-  }
-  {
-    'comment': 'Reserved POSIX types'
-    'match': '\\b([a-z0-9_]+_t)\\b'
-    'name': 'support.type.posix-reserved.c'
+    'name': 'support.type.sys-types.prg'
   }
   {
     'include': '#block'
@@ -215,13 +194,13 @@
     'begin': '(?x)\n    \t\t(?:  ^                                 # begin-of-line\n    \t\t  |  \n    \t\t     (?: (?= \\s )           (?<!else|new|return) (?<=\\w)      #  or word + space before name\n    \t\t       | (?= \\s*[A-Za-z_] ) (?<!&&)       (?<=[*&>])   #  or type modifier before name\n    \t\t     )\n    \t\t)\n    \t\t(\\s*) (?!(while|for|do|if|else|switch|catch|enumerate|return|sizeof|[cr]?iterate)\\s*\\()\n    \t\t(\n    \t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++ |                  # actual name\n    \t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )  # if it is a C++ operator\n    \t\t)\n    \t\t \\s*(?=\\()'
     'beginCaptures':
       '1':
-        'name': 'punctuation.whitespace.function.leading.c'
+        'name': 'punctuation.whitespace.function.leading.prg'
       '3':
-        'name': 'entity.name.function.c'
+        'name': 'entity.name.function.prg'
       '4':
-        'name': 'punctuation.definition.parameters.c'
+        'name': 'punctuation.definition.parameters.prg'
     'end': '(?<=\\})|(?=#)|(;)'
-    'name': 'meta.function.c'
+    'name': 'meta.function.prg'
     'patterns': [
       {
         'include': '#comments'
@@ -243,9 +222,9 @@
   'access':
     'captures':
       '1':
-        'name': 'punctuation.separator.variable-access.c'
+        'name': 'punctuation.separator.variable-access.prg'
       '2':
-        'name': 'variable.other.dot-access.c'
+        'name': 'variable.other.dot-access.prg'
     'match': '(\\.)([a-zA-Z_][a-zA-Z_0-9]*)\\b(?!\\s*\\()'
   'block':
     'patterns': [
@@ -253,12 +232,12 @@
         'begin': '\\{'
         'beginCaptures':
           '0':
-            'name': 'punctuation.section.block.begin.c'
+            'name': 'punctuation.section.block.begin.prg'
         'end': '\\}'
         'endCaptures':
           '0':
-            'name': 'punctuation.section.block.end.c'
-        'name': 'meta.block.c'
+            'name': 'punctuation.section.block.end.prg'
+        'name': 'meta.block.prg'
         'patterns': [
           {
             'include': '#block_innards'
@@ -292,11 +271,11 @@
       {
         'captures':
           '1':
-            'name': 'variable.other.c'
+            'name': 'variable.other.prg'
           '2':
-            'name': 'punctuation.definition.parameters.c'
+            'name': 'punctuation.definition.parameters.prg'
         'match': '(?x)\n\t\t\t        (?x)\n\t\t\t(?:  \n\t\t\t     (?: (?= \\s )           (?<!else|new|return) (?<=\\w)\\s+      #  or word + space before name\n\t\t\t     )\n\t\t\t)\n\t\t\t(\n\t\t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++    |              # actual name\n\t\t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )?  # if it is a C++ operator\n\t\t\t)\n\t\t\t \\s*(\\()'
-        'name': 'meta.initialization.c'
+        'name': 'meta.initialization.prg'
       }
       {
         'include': '#block'
@@ -308,66 +287,36 @@
   'c_function_call':
     'captures':
       '1':
-        'name': 'punctuation.whitespace.function-call.leading.c'
+        'name': 'punctuation.whitespace.function-call.leading.prg'
       '2':
-        'name': 'support.function.any-method.c'
+        'name': 'support.function.any-method.prg'
       '3':
-        'name': 'punctuation.definition.parameters.c'
+        'name': 'punctuation.definition.parameters.prg'
     'match': '(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n\t\t\t(\\b \n\t\t\t\t(?!(while|for|do|if|else|switch|catch|enumerate|return|sizeof|[cr]?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++                  # actual name\n\t\t\t)\n\t\t\t \\s*(\\()'
-    'name': 'meta.function-call.c'
+    'name': 'meta.function-call.prg'
   'comments':
     'patterns': [
       {
         'captures':
           '1':
-            'name': 'meta.toc-list.banner.block.c'
+            'name': 'meta.toc-list.banner.block.prg'
         'match': '^/\\* =(\\s*.*?)\\s*= \\*/$\\n?'
-        'name': 'comment.block.c'
+        'name': 'comment.block.prg'
       }
       {
         'begin': '/\\*'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.comment.begin.c'
+            'name': 'punctuation.definition.comment.begin.prg'
         'end': '\\*/'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.comment.end.c'
-        'name': 'comment.block.c'
+            'name': 'punctuation.definition.comment.end.prg'
+        'name': 'comment.block.prg'
       }
       {
         'match': '\\*/.*\\n'
-        'name': 'invalid.illegal.stray-comment-end.c'
-      }
-      {
-        'captures':
-          '1':
-            'name': 'meta.toc-list.banner.line.c'
-        'match': '^// =(\\s*.*?)\\s*=\\s*$\\n?'
-        'name': 'comment.line.banner.c++'
-      }
-      {
-        'begin': '(^[ \\t]+)?(?=//)'
-        'beginCaptures':
-          '1':
-            'name': 'punctuation.whitespace.comment.leading.c++'
-        'end': '(?!\\G)'
-        'patterns': [
-          {
-            'begin': '//'
-            'beginCaptures':
-              '0':
-                'name': 'punctuation.definition.comment.c++'
-            'end': '\\n'
-            'name': 'comment.line.double-slash.c++'
-            'patterns': [
-              {
-                'match': '(?>\\\\\\s*\\n)'
-                'name': 'punctuation.separator.continuation.c++'
-              }
-            ]
-          }
-        ]
+        'name': 'invalid.illegal.stray-comment-end.prg'
       }
     ]
   'disabled':
@@ -574,9 +523,9 @@
     'begin': '^\\s*(#\\s*(if(n?def)?)\\b.*?(?:(?=(?://|/\\*))|$))'
     'captures':
       '1':
-        'name': 'meta.preprocessor.c'
+        'name': 'meta.preprocessor.prg'
       '2':
-        'name': 'keyword.control.import.c'
+        'name': 'keyword.control.import.prg'
     'end': '^\\s*(#\\s*(endif)\\b)'
     'patterns': [
       {
@@ -587,9 +536,9 @@
     'begin': '^\\s*(#\\s*(if(n?def)?)\\b.*?(?:(?=(?://|/\\*))|$))'
     'captures':
       '1':
-        'name': 'meta.preprocessor.c'
+        'name': 'meta.preprocessor.prg'
       '2':
-        'name': 'keyword.control.import.c'
+        'name': 'keyword.control.import.prg'
     'end': '^\\s*(#\\s*(endif)\\b)'
     'patterns': [
       {
@@ -598,26 +547,26 @@
     ]
   'sizeof':
     'match': '\\b(sizeof)\\b'
-    'name': 'keyword.operator.sizeof.c'
+    'name': 'keyword.operator.sizeof.prg'
   'string_escaped_char':
     'patterns': [
       {
         'match': '\\\\(\\\\|[abefnprtv\'"?]|[0-3]\\d{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8})'
-        'name': 'constant.character.escape.c'
+        'name': 'constant.character.escape.prg'
       }
       {
         'match': '\\\\.'
-        'name': 'invalid.illegal.unknown-escape.c'
+        'name': 'invalid.illegal.unknown-escape.prg'
       }
     ]
   'string_placeholder':
     'patterns': [
       {
         'match': '(?x)%\n    \t\t\t\t\t\t(\\d+\\$)?                             # field (argument #)\n    \t\t\t\t\t\t[#0\\- +\']*                           # flags\n    \t\t\t\t\t\t[,;:_]?                              # separator character (AltiVec)\n    \t\t\t\t\t\t((-?\\d+)|\\*(-?\\d+\\$)?)?              # minimum field width\n    \t\t\t\t\t\t(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?         # precision\n    \t\t\t\t\t\t(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier\n    \t\t\t\t\t\t[diouxXDOUeEfFgGaACcSspn%]           # conversion type\n    \t\t\t\t\t'
-        'name': 'constant.other.placeholder.c'
+        'name': 'constant.other.placeholder.prg'
       }
       {
         'match': '%'
-        'name': 'invalid.illegal.placeholder.c'
+        'name': 'invalid.illegal.placeholder.prg'
       }
     ]
