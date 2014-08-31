@@ -4,7 +4,7 @@
   'ch'
 ]
 'firstLineMatch': '-[*]-( Mode:)? C -[*]-'
-'name': 'C'
+'name': 'harbour'
 'patterns': [
   {
     'include': '#preprocessor-rule-enabled'
