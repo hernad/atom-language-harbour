@@ -305,38 +305,23 @@
         'name': 'comment.block.prg'
       }
       {
+         'begin': '//'
+         'beginCaptures':
+           '0':
+           'name': 'punctuation.definition.comment.prg'
+         'end': '\\n'
+         'name': 'comment.line.double-slash.prg'
+         'patterns': [
+            {
+              'match': '(?>\\\\\\s*\\n)'
+              'name': 'punctuation.separator.continuation.prg'
+            }
+          ]
+      }
+      {
         'match': '\\*/.*\\n'
         'name': 'invalid.illegal.stray-comment-end.prg'
       }
-     {
-        'captures':
-          '1':
-            'name': 'meta.toc-list.banner.line.prg'
-        'match': '^// =(\\s*.*?)\\s*=\\s*$\\n?'
-        'name': 'comment.line.banner.prg'
-      }
-      {
-        'begin': '(^[ \\t]+)?(?=//)'
-        'beginCaptures':
-          '1':
-            'name': 'punctuation.whitespace.comment.leading.prg'
-        'end': '(?!\\G)'
-        'patterns': [
-          {
-            'begin': '//'
-            'beginCaptures':
-              '0':
-                'name': 'punctuation.definition.comment.prg'
-            'end': '\\n'
-            'name': 'comment.line.double-slash.prg'
-            'patterns': [
-              {
-                'match': '(?>\\\\\\s*\\n)'
-                'name': 'punctuation.separator.continuation.prg'
-              }
-            ]
-          }
-       }
 
     ]
   'disabled':
