@@ -1,5 +1,5 @@
 'name': 'harbour'
-'scopeName': 'source.prg'
+'scopeName': 'source.harbour'
 'fileTypes': [
   'prg'
   'ch'
