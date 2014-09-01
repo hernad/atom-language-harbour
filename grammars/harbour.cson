@@ -1,10 +1,9 @@
-'name': 'harbour'
+'name': 'Harbour (prg)'
 'scopeName': 'source.harbour'
 'fileTypes': [
   'prg'
   'ch'
 ]
-
 'repository': {
   'block_doc_comment': {
     'comment': 'Block documentation comment'
