@@ -7,4 +7,4 @@
     'body': 'IF ${1:condition}\n\t$0\nENDIF'
   'case .. end':
     'prefix': 'case'
-    'body': 'DO CASE'\n'CASE ${1:condition}\n$0\nCASE ${2:condition}\n$1\nOTHERWISE\n$3ENDCASE'
+    'body': 'DO CASE'\nCASE ${1:condition}\n$0\nCASE ${2:condition}\n$1\nOTHERWISE\n$3ENDCASE'
