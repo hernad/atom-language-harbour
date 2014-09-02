@@ -1,10 +1,10 @@
 '.source.harbour':
-  'if .. else .. end':
+  'if_else_end':
     'prefix': 'ife'
     'body': 'IF ${1:condition}\n\t$2\nELSE\n\t$3\nENDIF'
-  'if .. end':
+  'if_end':
     'prefix': 'if'
     'body': 'IF ${1:condition}\n\t$0\nENDIF'
-  'case .. end':
+  'case_end':
     'prefix': 'case'
     'body': 'DO CASE\nCASE ${1:condition}\n$0\nCASE ${2:condition}\n$1\nOTHERWISE\n$3ENDCASE'
