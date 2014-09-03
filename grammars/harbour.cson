@@ -7,7 +7,7 @@
 'repository': {
   'block_doc_comment': {
     'comment': 'Block documentation comment'
-    'name': 'comment.block.documentation.rust'
+    'name': 'comment.block.documentation.harbour'
     'begin': '/\\*[!\\*][^\\*]'
     'end': '\\*/'
     'patterns': [
@@ -17,7 +17,7 @@
   }
   'block_comment': {
     'comment': 'Block comment'
-    'name': 'comment.block.rust'
+    'name': 'comment.block.harbour'
     'begin': '/\\*'
     'end': '\\*/'
     'patterns': [
@@ -27,81 +27,72 @@
   }
   'line_doc_comment': {
     'comment': 'Single-line documentation comment'
-    'name': 'comment.line.documentation.rust'
+    'name': 'comment.line.documentation.harbour'
     'match': '//[!/][^/].*$'
   }
   'line_comment': {
     'comment': 'Single-line comment'
-    'name': 'comment.line.double-slash.rust'
+    'name': 'comment.line.double-slash.harbour'
     'match': '//.*$'
   }
+  
   'escaped_character': {
-    'name': 'constant.character.escape.rust'
+    'name': 'constant.character.escape.harbour'
     'match': '\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
   }
   'sigils': {
     'comment': 'Sigil'
-    'name': 'keyword.operator.sigil.rust'
+    'name': 'keyword.operator.sigil.harbour'
     'match': '[&*](?=[a-zA-Z0-9_\\(\\[\\|\\"]+)'
   }
+
   'string_literal': {
       'comment': 'Double-quote string'
-      'name': 'string.quoted.double.rust'
+      'name': 'string.quoted.double.harbour'
       'begin': '"'
       'end': '"'
       'patterns': [
         { 'include': '#escaped_character' }
       ]
   }
-  'types': {
-    'comment': 'Built-in type'
-    'name': 'storage.type.rust'
-    'match': '\\b(bool|char|uint|int|u8|u16|u32|u64|i8|i16|i32|i64|f32|f64|str|Self)\\b'
-  }
+
+
   'std_types': {
     'comment': 'Standard library type'
-    'name': 'support.class.std.rust'
+    'name': 'support.class.std.harbour'
     'match': '\\b(Box|Vec|StrBuf|Path|Option|Result|Reader|Writer|Stream|Seek|Buffer|IoError|IoResult|Sender|SyncSender|Receiver|Cell|RefCell|Any)\\b'
   }
   'kinds': {
     'comment': 'Built-in trait (kind)'
-    'name': 'support.type.kind.rust'
+    'name': 'support.type.kind.harbour'
     'match': '\\b(Send|Sized|Copy|Share|Drop|Freeze)\\b'
   }
   'self': {
     'comment': 'Self variable'
-    'name': 'variable.language.rust'
-    'match': '\\bself\\b'
+    'name': 'variable.language.harbour'
+    'match': '\\b(SELF|self)\\b'
   }
-  'mut': {
-    'comment': 'Mutable storage modifier'
-    'name': 'storage.modifier.mut.rust'
-    'match': '\\bmut\\b'
-  }
-  'box': {
-    'comment': 'Box storage modifier'
-    'name': 'storage.modifier.box.rust'
-    'match': '\\bbox\\b'
-  }
+
+
   'lifetime': {
     'comment': 'Named lifetime'
-    'name': 'storage.modifier.lifetime.rust'
+    'name': 'storage.modifier.lifetime.harbour'
     'match': '\'([a-zA-Z_][a-zA-Z0-9_]*)\\b'
     'captures': {
-      '1': { 'name': 'entity.name.lifetime.rust' }
+      '1': { 'name': 'entity.name.lifetime.harbour' }
     }
   }
   'ref_lifetime': {
     'comment': 'Reference with named lifetime'
     'match': '&(\'([a-zA-Z_][a-zA-Z0-9_]*))\\b'
     'captures': {
-      '1': { 'name': 'storage.modifier.lifetime.rust' }
-      '2': { 'name': 'entity.name.lifetime.rust' }
+      '1': { 'name': 'storage.modifier.lifetime.harbour' }
+      '2': { 'name': 'entity.name.lifetime.harbour' }
     }
   }
   'type_params': {
     'comment': 'Type parameters'
-    'name': 'meta.type_params.rust'
+    'name': 'meta.type_params.harbour'
     'begin': '<'
     'end': '>'
     'patterns': [
@@ -127,7 +118,7 @@
   # Attributes
   {
     'comment': 'Attribute'
-    'name': 'meta.attribute.rust'
+    'name': 'meta.attribute.harbour'
     'begin': '#\\!?\\['
     'end': '\\]'
     'patterns': [
@@ -137,75 +128,72 @@
   # Strings
   {
     'comment': 'Single-quote string (character literal)'
-    'name': 'string.quoted.single.rust'
+    'name': 'string.quoted.single.harbour'
     'match': '\'([^\'\\\\]|\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.))\''
   }
   { 'include': '#string_literal' }
   # Numbers
   {
     'comment': 'Floating point number (fraction)'
-    'name': 'constant.numeric.float.rust'
+    'name': 'constant.numeric.float.harbour'
     'match': '\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-][0-9_]+)?(f32|f64)?\\b'
   }
   {
     'comment': 'Floating point number (exponent)'
-    'name': 'constant.numeric.float.rust'
+    'name': 'constant.numeric.float.harbour'
     'match': '\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?[eE][+-][0-9_]+(f32|f64)?\\b'
   }
   {
     'comment': 'Floating point number (typed)'
-    'name': 'constant.numeric.float.rust'
+    'name': 'constant.numeric.float.harbour'
     'match': '\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-][0-9_]+)?(f32|f64)\\b'
   }
   {
     'comment': 'Integer number (decimal)'
-    'name': 'constant.numeric.integer.decimal.rust'
+    'name': 'constant.numeric.integer.decimal.harbour'
     'match': '\\b[0-9][0-9_]*([ui](8|16|32|64)?)?\\b'
   }
   {
     'comment': 'Integer number (hexadecimal)'
-    'name': 'constant.numeric.integer.hexadecimal.rust'
+    'name': 'constant.numeric.integer.hexadecimal.harbour'
     'match': '\\b0x[a-fA-F0-9_]+([ui](8|16|32|64)?)?\\b'
   }
   {
     'comment': 'Integer number (octal)'
-    'name': 'constant.numeric.integer.octal.rust'
+    'name': 'constant.numeric.integer.octal.harbour'
     'match': '\\b0o[0-7_]+([ui](8|16|32|64)?)?\\b'
   }
   {
     'comment': 'Integer number (binary)'
-    'name': 'constant.numeric.integer.binary.rust'
+    'name': 'constant.numeric.integer.binary.harbour'
     'match': '\\b0b[01_]+([ui](8|16|32|64)?)?\\b'
   }
   # Language
   {
     'comment': 'Static storage modifier'
-    'name': 'storage.modifier.static.rust'
-    'match': '\\bstatic\\b'
-  }
-  {
-    'comment': 'Visibility modifier'
-    'name': 'storage.modifier.visibility.rust'
-    'match': '\\bpub\\b'
+    'name': 'storage.modifier.static.harbour'
+    'match': '\\b(static|STATIC)\\b'
   }
   {
     'comment': 'Boolean constant'
-    'name': 'constant.language.boolean.rust'
-    'match': '\\b(true|false)\\b'
+    'name': 'constant.language.boolean.harbour'
+    'match': '\\b(\\.T\\.|\\.t\\.|\\.F\\.|\\.f\\.)\\b'
   }
+
   {
     'comment': 'Control keyword'
-    'name': 'keyword.control.rust'
-    'match': '\\b(break|continue|else|if|in|for|loop|match|return|while)\\b'
+    'name': 'keyword.control.harbour'
+    'match': '\\b(EXIT|ELSEIF|ELSE|IF|FOR|NEXT|LOOP|CASE|RETURN|WHILE|DO WHILE)\\b'
   }
+
   {
     'comment': 'Keyword'
-    'name': 'keyword.other.rust'
+    'name': 'keyword.other.harbour'
     'match': '\\b(LOCAL|PRIVATE|PUBLIC|FIELD|crate|extern|mod|let|proc|ref|use|super)\\b'
   }
   {
     'comment': 'Unsafe code keyword'
-    'name': 'keyword.other.unsafe.rust'
+    'name': 'keyword.other.unsafe.harbour'
     'match': '\\bunsafe\\b'
   }
   # TODO: _
@@ -221,77 +209,45 @@
   # Operators
   {
     'comment': 'Operator'
-    'name': 'keyword.operator.rust'
-    'match': '(\\+|-|/|\\*|=|\\^|&|\\||!|>|<|%|::|\\bas\\b)'
+    'name': 'keyword.operator.harbour'
+    'match': '(\\+|-|/|\\*|!=|==|=|!|>|<|>=|<=|\\bas\\b)'
   }
-  # TODO: procs and closures
+
   # Standard library
   {
     'comment': 'Standard library macro'
-    'name': 'support.function.std.rust'
-    'match': '\\b(log|error|warn|info|debug|log_enabled|fail|assert|assert_eq|unreachable|unimplemented|format|write|writeln|print|println|local_data_key|try|vec|select)!'
+    'name': 'support.function.std.harbour'
+    'match': '\\b(log_write|pp|to_str|TRIM|Trim|Padr|PADR)!'
   }
   {
     'comment': 'Standard library type variant'
-    'name': 'support.constant.std.rust'
+    'name': 'support.constant.std.harbour'
     'match': '\\b(Some|None|Ok|Err)\\b'
   }
-  # Function and macro calls
-  {
-    'comment': 'Invokation of a macro'
-    'match': '\\b([a-zA-Z_][a-zA-Z0-9_]*\\!)\\s*[({\\[]'
-    'captures': {
-      '1': { 'name': 'entity.name.function.macro.rust' }
-    }
-  }
+
   {
     'comment': 'Function call'
     'match': '\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\('
     'captures': {
-      '1': { 'name': 'entity.name.function.rust' }
+      '1': { 'name': 'entity.name.function.harbour' }
     }
   }
   # Function definition
   {
     'comment': 'Function definition'
-    'begin': '\\b(FUNCTION)\\s+([a-zA-Z_][a-zA-Z0-9_]*)'
-    'end': '[\\{;]'
+    'begin': '\\b(FUNCTION|STATIC FUNCTION)\\s+([a-zA-Z_][a-zA-Z0-9_]*)'
+    'end': '[\\n]'
     'beginCaptures': {
-      '1': { 'name': 'keyword.other.fn.rust' }
-      '2': { 'name': 'entity.name.function.rust' }
+      '1': { 'name': 'keyword.other.fn.harbour' }
+      '2': { 'name': 'entity.name.function.harbour' }
     }
     'patterns': [
       { 'include': '#type_params' }
       { 'include': '$self' }
     ]
   }
-  # Type declaration
-  {
-    'comment': 'Type declaration'
-    'begin': '\\b(enum|struct|trait|type)\\s+([a-zA-Z_][a-zA-Z0-9_]*)'
-    'end': '[\\{;]'
-    'beginCaptures': {
-      '1': { 'name': 'storage.type.rust' }
-      '2': { 'name': 'entity.name.type.rust' }
-    }
-    'patterns': [
-      { 'include': '#type_params' }
-      { 'include': '$self' }
-    ]
-  }
-  # Implementation
-  {
-    'comment': 'Implementation'
-    'begin': '\\b(impl)\\b'
-    'end': '\\{'
-    'beginCaptures': {
-      '1': { 'name': 'storage.type.rust' }
-    }
-    'patterns': [
-      { 'include': '#type_params' }
-      { 'include': '$self' }
-    ]
-  }
+
+
   # Variable declaration
   {
     'comment': 'Variable declaration'
