@@ -1,7 +1,7 @@
 {
   "name": "language-harbour",
   "main": "./lib/language-harbour",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "harbour programming langugage",
   "activationEvents": [
     "language-harbour:toggle"
