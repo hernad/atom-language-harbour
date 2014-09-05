@@ -171,18 +171,18 @@
   {
   'comment': 'variable name hungary notation'
   'name': 'variable.name.hungary.harbour'
-  'match': '\\b(s_)?[a,b,c,d,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
+  'match': '\\b(s_)?(mtx_)?[a,b,c,d,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
   }
   {
     'comment': 'Control keyword'
     'name': 'keyword.control.harbour'
-    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|ENDSWITCH|RETURN|ENDCLASS|WHILE|DO WHILE|ENDDO)\\b'
+    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|ENDSWITCH|RETURN|ENDCLASS|DATA|WHILE|DO WHILE|ENDDO)\\b'
   }
 
   {
     'comment': 'Keyword'
     'name': 'keyword.other.harbour'
-    'match': '\\b(LOCAL|PRIVATE|PUBLIC|FIELD|field|MEMVAR)\\b'
+    'match': '\\b(LOCAL|PRIVATE|PROTECTED|PUBLIC|FIELD|field|MEMVAR)\\b'
   }
 
 
@@ -195,7 +195,7 @@
   {
     'comment': 'Operator'
     'name': 'keyword.operator.harbour'
-    'match': '(\\+|-|/|\\*|!=|==|=|!|>|<|>=|<=|\\bas\\b)'
+    'match': '(\\+|-|/|\\*|!=|==|=|!|>|<|>=|<=|::|\\bas\\b)'
   }
 
   # Standard library
