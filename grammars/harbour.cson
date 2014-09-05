@@ -70,6 +70,11 @@
     'match': '\\b(Self|SELF|self)\\b'
   }
 
+  'nil': {
+    'comment': 'Nil variable'
+    'name': 'variable.language.harbour'
+    'match': '\\b(NIL|nil)\\b'
+  }
 
   'type_params': {
     'comment': 'Type parameters'
@@ -157,8 +162,10 @@
   {
     'comment': 'Boolean constant'
     'name': 'constant.language.boolean.harbour'
-    'match': '\\b(TRUE|FALSE|\\.T\\.|\\.t\\.|\\.F\\.|\\.f\\.)\\b'
+    'match': '\\b(TRUE|FALSE|\\.T\\.)\\b'
   }
+
+
   {
     'comment': 'variable name hungary notation'
     'name': 'variable.name.hungary.harbour'
@@ -170,9 +177,10 @@
     'name': 'keyword.control.harbour'
     'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|ENDSWITCH|RETURN|ENDCLASS|DATA|INIT|WHILE|DO WHILE|ENDDO)\\b'
   }
+
   {
     'comment': 'Xbase keywords'
-    'name': 'keyword.xbase.harbour'
+    'name': 'keyword.command.xbase.harbour'
     'match': '\\b(REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
   }
 
@@ -190,11 +198,20 @@
   { 'include': '#ref_lifetime' }
 
   # Operators
-  {
-    'comment': 'Operator'
-    'name': 'keyword.operator.harbour'
-    'match': '\\b(\\+{1,2}|-|/|\\*|!\\=|\\<\\>|\\={1,2}|\\!|\\>|\\<|\\>\\=|\\<\\=|[:]{2})\\b'
-  }
+  #{
+  #  'comment': 'Operator'
+  #  'name': 'keyword.operator.harbour'
+  #  'match': '\\b(\\+{1,2}|-|/|\\*|!\\=|\\<\\>|\\={1,2}|\\!|\\>|\\<|\\>\\=|\\<\\=|[:]{2})\\b'
+  #}
+
+   {
+    'match': '(:=)'
+    'name': 'keyword.operator.assignment.harbour'
+   }
+   {
+    'match': '(==|!=|<>|<|>|<=|>=|\\$)'
+    'name': 'keyword.operator.comparison.harbour'
+   }
 
   # Standard library
   {
