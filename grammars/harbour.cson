@@ -203,6 +203,73 @@
   { 'include': '#lifetime' }
   { 'include': '#ref_lifetime' }
 
+  {
+    'begin': '^\\s*#\\s*(error|warning)\\b'
+    'captures':
+      '1':
+        'name': 'keyword.control.import.error.harbour'
+    'end': '(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.diagnostic.harbour'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.harbour'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*#\\s*(include|import)\\b\\s+'
+    'captures':
+      '1':
+        'name': 'keyword.control.import.include.harbour'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.harbour.include'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.harbour'
+      }
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.harbour'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.harbour'
+        'name': 'string.quoted.double.include.c'
+      }
+      {
+        'begin': '<'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.harbour'
+        'end': '>'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.harbour'
+        'name': 'string.quoted.other.lt-gt.include.harbour'
+      }
+    ]
+  }
+
+  # if, define, else ...
+  {
+    'begin': '^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef)\\b'
+    'captures':
+      '1':
+        'name': 'keyword.control.import.harbour'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.harbour'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.c'
+      }
+    ]
+  }
+
   # Operators
   # {
   #  'comment': 'Operator'
@@ -215,7 +282,7 @@
     'name': 'keyword.operator.assignment.harbour'
    }
    {
-    'match': '(<=|>=|==|!=|!|<>|<|>|\\$|\\.OR\\.|\\.AND\\.)'
+    'match': '(<=|>=|==|!=|!|<>|<|>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s)'
     'name': 'keyword.operator.comparison.harbour'
    }
 
