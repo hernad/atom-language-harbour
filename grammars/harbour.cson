@@ -150,7 +150,7 @@
   {
     'comment': 'Boolean constant'
     'name': 'constant.language.boolean.harbour'
-    'match': '\\b(TRUE|FALSE|\\.T\\.|\\.t\\.|\\.F\\.|\\.f\\.)\\b'
+    'match': '\\b(TRUE|FALSE|[.]T[.]|\\.t\\.|\\.F\\.|\\.f\\.)\\b'
   }
   {
     'comment': 'variable name hungary notation'
@@ -180,7 +180,7 @@
   {
     'comment': 'Operator'
     'name': 'keyword.operator.harbour'
-    'match': '(\\+|-|/|\\*|!=|==|=|!|>|<|>=|<=|\\:\\:)'
+    'match': '(\\+|-|/|\\*|![=]|[=]{2}|[=]|\\!|\\>|\\<|\\>\\=|\\<\\=|[:]{2})'
   }
 
   # Standard library
