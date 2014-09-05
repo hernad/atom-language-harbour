@@ -35,15 +35,10 @@
     'name': 'comment.line.double-slash.harbour'
     'match': '//.*$'
   }
-  
+
   'escaped_character': {
     'name': 'constant.character.escape.harbour'
     'match': '\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
-  }
-  'sigils': {
-    'comment': 'Sigil'
-    'name': 'keyword.operator.sigil.harbour'
-    'match': '[&*](?=[a-zA-Z0-9_\\(\\[\\|\\"]+)'
   }
 
   'string_literal': {
@@ -60,13 +55,9 @@
   'std_types': {
     'comment': 'Standard library type'
     'name': 'support.class.std.harbour'
-    'match': '\\b(Box|Vec|StrBuf|Path|Option|Result|Reader|Writer|Stream|Seek|Buffer|IoError|IoResult|Sender|SyncSender|Receiver|Cell|RefCell|Any)\\b'
+    'match': '\\b(Vec|StrBuf|Path|Option|Result|Reader|Writer|Stream|Seek|Buffer|IoError|IoResult|Sender|SyncSender|Receiver|Cell|RefCell|Any)\\b'
   }
-  'kinds': {
-    'comment': 'Built-in trait (kind)'
-    'name': 'support.type.kind.harbour'
-    'match': '\\b(Send|Sized|Copy|Share|Drop|Freeze)\\b'
-  }
+
   'self': {
     'comment': 'Self variable'
     'name': 'variable.language.harbour'
@@ -101,8 +92,6 @@
       { 'include': '#sigils' }
       { 'include': '#types' }
       { 'include': '#std_types' }
-      { 'include': '#kinds' }
-      { 'include': '#mut' }
       { 'include': '#lifetime' }
       { 'include': '#type_params' }
     ]
@@ -179,31 +168,27 @@
     'name': 'constant.language.boolean.harbour'
     'match': '\\b(\\.T\\.|\\.t\\.|\\.F\\.|\\.f\\.)\\b'
   }
-
+  {
+  'comment': 'variable name hungary notation'
+  'name': 'variable.name.hungary.harbour'
+  'match': '\\b[a,b,c,d,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
+  }
   {
     'comment': 'Control keyword'
     'name': 'keyword.control.harbour'
-    'match': '\\b(EXIT|ELSEIF|ELSE|IF|FOR|NEXT|LOOP|CASE|RETURN|WHILE|DO WHILE)\\b'
+    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|NEXT|LOOP|DO CASE|ENDCASE|RETURN|WHILE|DO WHILE|ENDDO)\\b'
   }
 
   {
     'comment': 'Keyword'
     'name': 'keyword.other.harbour'
-    'match': '\\b(LOCAL|PRIVATE|PUBLIC|FIELD|crate|extern|mod|let|proc|ref|use|super)\\b'
+    'match': '\\b(LOCAL|PRIVATE|PUBLIC|FIELD|field|MEMVAR)\\b'
   }
-  {
-    'comment': 'Unsafe code keyword'
-    'name': 'keyword.other.unsafe.harbour'
-    'match': '\\bunsafe\\b'
-  }
-  # TODO: _
-  { 'include': '#sigils' }
+
+
   { 'include': '#types' }
   { 'include': '#std_types' }
-  { 'include': '#kinds' }
   { 'include': '#self' }
-  { 'include': '#mut' }
-  { 'include': '#box' }
   { 'include': '#lifetime' }
   { 'include': '#ref_lifetime' }
   # Operators
