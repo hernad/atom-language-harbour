@@ -169,7 +169,7 @@
   {
     'comment': 'variable name hungary notation'
     'name': 'variable.name.hungary.harbour'
-    'match': '\\b(s_)?(mtx_)?[a,b,c,d,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
+    'match': '\\b(s_)?(mtx_)?[a,b,c,d,h,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
   }
 
   {
