@@ -44,7 +44,7 @@
   'sigils': {
     'comment': 'Sigil'
     'name': 'keyword.operator.sigil.harbou'
-    'match': '[@]|[:]{2}(?=[a-zA-Z0-9_\\(\\[\\|\\"]+)'
+    'match': '[@]|[:]{2}|[+]{2}(?=[a-zA-Z0-9_\\(\\[\\|\\"]+)'
   }
 
   'string_literal': {
@@ -162,7 +162,7 @@
   {
     'comment': 'Boolean constant'
     'name': 'constant.language.boolean.harbour'
-    'match': '\\b(TRUE|FALSE|\\.T\\.)\\b'
+    'match': '\\b(TRUE|FALSE|[.]T[.])\\b'
   }
 
 
@@ -181,9 +181,14 @@
   {
     'comment': 'Xbase keywords'
     'name': 'keyword.command.xbase.harbour'
-    'match': '\\b(REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
+    'match': '\\b(SEEK|REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
   }
 
+  {
+    'comment': 'Xbase keywords'
+    'name': 'keyword.command.xbase.harbour'
+    'match': '\\b(HSEEK|RREPLACE|START PRINT|ENDPRINT)\\b'
+  }
   {
     'comment': 'Keyword'
     'name': 'keyword.other.harbour'
@@ -205,11 +210,11 @@
   #}
 
    {
-    'match': '(:=)'
+    'match': '(:=|->|\\+=|-=)'
     'name': 'keyword.operator.assignment.harbour'
    }
    {
-    'match': '(==|!=|<>|<|>|<=|>=|\\$)'
+    'match': '(<=|>=|==|!=|!|<>|<|>|\\$)'
     'name': 'keyword.operator.comparison.harbour'
    }
 
