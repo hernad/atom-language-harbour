@@ -165,6 +165,13 @@
     'match': '(TRUE|FALSE|\\.T\\.|\\.F\\.)'
   }
 
+  {
+    'comment': 'Keyboard harbour constants'
+    'name': 'constant.language.keyboard.harbour'
+    'match': '(K_DOWN|K_PGDN|K_CTRL_PGDN|K_UP|K_PGUP|K_CTRL_PGUP|K_RIGHT|K_LEFT|K_HOME|K_END|K_CTRL_LEFT|K_CTRL_RIGHT|K_CTRL_HOME|K_CTRL_END)'
+  }
+
+
 
   {
     'comment': 'variable name hungary notation'
