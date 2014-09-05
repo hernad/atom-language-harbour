@@ -215,7 +215,7 @@
     'name': 'keyword.operator.assignment.harbour'
    }
    {
-    'match': '(<=|>=|==|!=|!|<>|<|>|\\$)'
+    'match': '(<=|>=|==|!=|!|<>|<|>|\\$|\\.OR\\.|\\.AND\\.)'
     'name': 'keyword.operator.comparison.harbour'
    }
 
