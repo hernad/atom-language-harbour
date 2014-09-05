@@ -162,7 +162,7 @@
   {
     'comment': 'Boolean constant'
     'name': 'constant.language.boolean.harbour'
-    'match': '\\b(TRUE|FALSE|[.]T[.])\\b'
+    'match': '\\b(TRUE|FALSE|\\s\\.T\\.\\s|\\s\\.F\\.\\s)\\b'
   }
 
 
@@ -173,9 +173,15 @@
   }
 
   {
+    'comment': 'variable name'
+    'name': 'variable.name.special.harbour'
+    'match': '\\b_[a-z][A-Za-z0-9_]*|i|j\\b'
+  }
+
+  {
     'comment': 'Control keyword'
     'name': 'keyword.control.harbour'
-    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|ENDSWITCH|RETURN|ENDCLASS|DATA|INIT|WHILE|DO WHILE|ENDDO)\\b'
+    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|TO|STEP|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|ENDSWITCH|RETURN|ENDCLASS|DATA|INIT|WHILE|DO WHILE|ENDDO)\\b'
   }
 
   {
@@ -238,7 +244,7 @@
         'endCaptures':
           '0':
             'name': 'punctuation.definition.string.end.harbour'
-        'name': 'string.quoted.double.include.c'
+        'name': 'string.quoted.double.include.harbour'
       }
       {
         'begin': '<'
@@ -265,7 +271,7 @@
     'patterns': [
       {
         'match': '(?>\\\\\\s*\\n)'
-        'name': 'punctuation.separator.continuation.c'
+        'name': 'punctuation.separator.continuation.harbour'
       }
     ]
   }
