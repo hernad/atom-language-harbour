@@ -181,7 +181,7 @@
   {
     'comment': 'Xbase keywords'
     'name': 'keyword.command.xbase.harbour'
-    'match': '\\b(SEEK|REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
+    'match': '\\b(GO TOP|SELECT|SAY|GET|PICTURE|SEEK|REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
   }
 
   {
@@ -199,15 +199,16 @@
   { 'include': '#types' }
   { 'include': '#std_types' }
   { 'include': '#self' }
+  { 'include': '#nil' }
   { 'include': '#lifetime' }
   { 'include': '#ref_lifetime' }
 
   # Operators
-  #{
+  # {
   #  'comment': 'Operator'
   #  'name': 'keyword.operator.harbour'
   #  'match': '\\b(\\+{1,2}|-|/|\\*|!\\=|\\<\\>|\\={1,2}|\\!|\\>|\\<|\\>\\=|\\<\\=|[:]{2})\\b'
-  #}
+  # }
 
    {
     'match': '(:=|->|\\+=|-=)'
