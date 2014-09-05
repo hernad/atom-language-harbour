@@ -150,17 +150,23 @@
   {
     'comment': 'Boolean constant'
     'name': 'constant.language.boolean.harbour'
-    'match': '\\b(TRUE|FALSE|[.]T[.]|\\.t\\.|\\.F\\.|\\.f\\.)\\b'
+    'match': '\\b(TRUE|FALSE|\\.T\\.|\\.t\\.|\\.F\\.|\\.f\\.)\\b'
   }
   {
     'comment': 'variable name hungary notation'
     'name': 'variable.name.hungary.harbour'
     'match': '\\b(s_)?(mtx_)?[a,b,c,d,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
   }
+
   {
     'comment': 'Control keyword'
     'name': 'keyword.control.harbour'
     'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|ENDSWITCH|RETURN|ENDCLASS|DATA|INIT|WHILE|DO WHILE|ENDDO)\\b'
+  }
+  {
+    'comment': 'Xbase keywords'
+    'name': 'keyword.xbase.harbour'
+    'match': '\\b(REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
   }
 
   {
@@ -180,7 +186,7 @@
   {
     'comment': 'Operator'
     'name': 'keyword.operator.harbour'
-    'match': '(\\+|-|/|\\*|![=]|[=]{2}|[=]|\\!|\\>|\\<|\\>\\=|\\<\\=|[:]{2})'
+    'match': '\\b(\\+{1,2}|-|/|\\*|!\\=|\\<\\>|\\={1,2}|\\!|\\>|\\<|\\>\\=|\\<\\=|[:]{2})\\b'
   }
 
   # Standard library
@@ -188,11 +194,6 @@
     'comment': 'Standard library macro'
     'name': 'support.function.std.harbour'
     'match': '\\b(log_write|pp|to_str|TRIM|Trim|Padr|PADR)!'
-  }
-  {
-    'comment': 'Standard library type variant'
-    'name': 'support.constant.std.harbour'
-    'match': '\\b(Some|None|Ok|Err)\\b'
   }
 
   {
