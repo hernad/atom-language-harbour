@@ -162,7 +162,7 @@
   {
     'comment': 'Boolean constant'
     'name': 'constant.language.boolean.harbour'
-    'match': '(TRUE|FALSE|\\s\\.T\\.\\s|\\s\\.F\\.\\s)'
+    'match': '(TRUE|FALSE|\\.T\\.|\\.F\\.)'
   }
 
 
@@ -175,18 +175,18 @@
   {
     'comment': 'variable name'
     'name': 'variable.name.special.harbour'
-    'match': '\\b_[a-z][A-Za-z0-9_]*|\s(i|j)\\s\\b'
+    'match': '\\b_[a-z][A-Za-z0-9_]*|\\s(i|j)\\s\\b'
   }
 
   # if, define, else ...
-  {
-    'begin': '^\\s*LOCAL.*\\s+(i|j)'
-    'captures':
-      '1':
-        'name': 'variable.name.short.harbour'
-    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
-    'name': 'variable.ij.local.block'
-  }
+  # {
+  #  'begin': '^\\s*LOCAL.*\\s+(i|j)'
+  #  'captures':
+  #    '1':
+  #      'name': 'variable.name.short.harbour'
+  #  'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+  #  'name': 'variable.ij.local.block'
+  # }
 
   {
     'comment': 'Control keyword'
@@ -298,7 +298,7 @@
     'name': 'keyword.operator.assignment.harbour'
    }
    {
-    'match': '(<=|>=|==|!=|!|<>|<|>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s)'
+    'match': '(\\<=|>=|==|!=|!|\\<>|\\<|>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s)'
     'name': 'keyword.operator.comparison.harbour'
    }
 
