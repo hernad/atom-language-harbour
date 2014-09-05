@@ -175,7 +175,7 @@
   {
     'comment': 'variable name'
     'name': 'variable.name.special.harbour'
-    'match': '\\b_[a-z][A-Za-z0-9_]*|(?:LOCAL\\s+)(i|j)|\s(i|j)\\s\\b'
+    'match': '\\b_[a-z][A-Za-z0-9_]*|LOCAL\\s+(i|j)|\s(i|j)\\s\\b'
   }
 
   {
@@ -307,15 +307,26 @@
     }
   }
 
-  # Method definition
+  # Method call
   {
 
     'comment': 'Method call'
     'match': '\\b([a-zA-Z_][a-zA-Z0-9_]*):([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\('
     'captures': {
-        '1': { 'name': 'variable.name.harbour' }
+        '1': { 'name': 'variable.name.object.harbour' }
         '1': { 'name': 'entity.name.method.harbour' }
      }
+  }
+
+  # aObject:member
+  {
+
+   'comment': 'Class variable usage'
+   'match': '\\b([a-zA-Z_][a-zA-Z0-9_]*):([a-zA-Z_][a-zA-Z0-9_]*)'
+   'captures': {
+      '1': { 'name': 'variable.name.object.harbour' }
+      '1': { 'name': 'variable.name.member.harbour' }
+    }
   }
 
   # Function definition
