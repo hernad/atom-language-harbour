@@ -11,3 +11,9 @@
   'f18_header':
     'prefix': 'f18head'
     'body': '/*\n * This file is part of the bring.out knowhow ERP, a free and open source\n * Enterprise Resource Planning software suite,\n * Copyright (c) 1994-2011 by bring.out doo Sarajevo.\n * It is licensed to you under the Common Public Attribution License\n * version 1.0, the full text of which (including FMK specific Exhibits)\n * is available in the file LICENSE_CPAL_bring.out_knowhow.md located at the\n * root directory of this source code archive.\n * By using this software, you agree to be bound by its terms.\n */\n\n#include \"fmk.ch\"\n'
+  'thread create dbf':
+    'prefix': 'thCreDbf'
+    'body': "bFunctions := {| table_name, alias, aDbf | ;\n   create_dbf( table_name, aDbf ), ;\n   after_create_modstru( table_name ), ;\n   CREATE_INDEX( ${1:tag}, ${1:index}, alias );\n   }\nthread_create_modstru_index_dbf(  bFunctions, _table_name, _alias, aDbf )\n"
+  'switch':
+    'prefix': 'switch'
+    'body': "SWITCH ${1:condition}\n   CASE ${2:value}\n   ${3:statement}\n   EXIT\nCASE ${4:value}\n   ${5:statement}\n   EXIT\nENDSWITCH\n"
