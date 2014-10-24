@@ -12,15 +12,15 @@
     'prefix': 'switch'
     'body': 'SWITCH ${1:condition}\n   CASE ${2:value}\n   ${3:statement}\n   EXIT\nCASE ${4:value}\n   ${5:statement}\n   EXIT\nENDSWITCH\n'
   'uglaste zagrade':
-     'prefix' : 'Zug'
-     'body': '[]'
+    'prefix' : 'Zug'
+    'body': '[]'
   'viticaste zagrade':
-     'prefix' : 'Zvit'
-     'body': '{}'
+    'prefix' : 'Zvit'
+    'body': '{}'
   'backslash':
     'prefix' : 'Bs'
     'body': '\\'
-  'hash_hrec'
+  'hash_hrec':
     'prefix': 'hash'
     'body': '${1:hRec}[ \'${2:key}\' ] |'
   'f18_header':
