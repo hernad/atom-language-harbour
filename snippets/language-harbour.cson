@@ -25,7 +25,7 @@
     'body': '${1:hRec}[ \'${2:key}\' ]${3: }'
   'hash_hrec_assing':
     'prefix': 'hasha'
-    'body': '${1:hRec}[ \'${2:key}\' ]${3: \:=}'
+    'body': '${1:hRec}[ \'${2:key}\' ]${3: \:= }'
   'f18_header':
     'prefix': 'f18head'
     'body': '/*\n * This file is part of the bring.out knowhow ERP, a free and open source\n * Enterprise Resource Planning software suite,\n * Copyright (c) 1994-2011 by bring.out doo Sarajevo.\n * It is licensed to you under the Common Public Attribution License\n * version 1.0, the full text of which (including FMK specific Exhibits)\n * is available in the file LICENSE_CPAL_bring.out_knowhow.md located at the\n * root directory of this source code archive.\n * By using this software, you agree to be bound by its terms.\n */\n\n#include \"f18.ch\"\n'
