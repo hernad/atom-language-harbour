@@ -3,6 +3,7 @@
 'fileTypes': [
   'prg'
   'ch'
+  'hb'
 ]
 'repository': {
   'block_doc_comment': {
