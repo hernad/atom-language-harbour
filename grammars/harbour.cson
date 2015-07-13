@@ -3,6 +3,7 @@
 'fileTypes': [
   'prg'
   'ch'
+  'hb'
 ]
 'repository': {
   'block_doc_comment': {
@@ -52,6 +53,7 @@
       'name': 'string.quoted.double.harbour'
       'begin': '"'
       'end': '"'
+      # TOFIX: String parsing will fail on this string: "\"
       'patterns': [
         { 'include': '#escaped_character' }
       ]
@@ -61,6 +63,7 @@
   'std_types': {
     'comment': 'Standard library type'
     'name': 'support.class.std.harbour'
+    # TOFIX: These don't seem like Harbour related syntax
     'match': '\\b(Vec|StrBuf|Path|Option|Result|Reader|Writer|Stream|Seek|Buffer|IoError|IoResult|Sender|SyncSender|Receiver|Cell|RefCell|Any)\\b'
   }
 
@@ -157,7 +160,7 @@
   {
     'comment': 'Static storage modifier'
     'name': 'storage.modifier.static.harbour'
-    'match': '\\b(static|STATIC)\\b'
+    'match': '\\b(static|STATIC|THREAD STATIC)\\b'
   }
   {
     'comment': 'Boolean constant'
@@ -176,7 +179,7 @@
   {
     'comment': 'variable name hungary notation'
     'name': 'variable.name.hungary.harbour'
-    'match': '\\b(s_)?(mtx_)?[a,b,c,d,h,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
+    'match': '\\b(s_)?(mtx)?[a,b,c,d,h,l,n,o,u,x][A-Z][A-Za-z0-9_]*\\b'
   }
 
   {
@@ -198,18 +201,19 @@
   {
     'comment': 'Control keyword'
     'name': 'keyword.control.harbour'
-    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|TO|STEP|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|OTHERWISE|ENDSWITCH|RETURN|ENDCLASS|DATA|INIT|WHILE|DO WHILE|ENDDO)\\b'
+    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|EACH|IN|TO|STEP|DESCEND|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|OTHERWISE|ENDSWITCH|RETURN|ENDCLASS|VAR|DATA|INIT|WHILE|DO WHILE|ENDDO|BEGIN SEQUENCE|END SEQUENCE|RECOVER USING|WITH|BREAK|PARAMETERS|END|REQUEST|ANNOUNCE)\\b'
   }
 
   {
-    'comment': 'Xbase keywords'
+    'comment': 'xBase keywords'
     'name': 'keyword.command.xbase.harbour'
     'match': '\\b(GO TOP|SELECT|SAY|GET|PICTURE|SEEK|REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
   }
 
   {
-    'comment': 'Xbase keywords'
+    'comment': 'xBase keywords'
     'name': 'keyword.command.xbase.harbour'
+    # TOFIX: These don't seem like Harbour related syntax
     'match': '\\b(HSEEK|RREPLACE|START PRINT|ENDPRINT)\\b'
   }
   {
@@ -227,7 +231,7 @@
   { 'include': '#ref_lifetime' }
 
   {
-    'begin': '^\\s*#\\s*(error|warning)\\b'
+    'begin': '^\\s*#\\s*(error|warning|stdout)\\b'
     'captures':
       '1':
         'name': 'keyword.control.import.error.harbour'
@@ -241,7 +245,7 @@
     ]
   }
   {
-    'begin': '^\\s*#\\s*(include|import)\\b\\s+'
+    'begin': '^\\s*#\\s*(include|require)\\b\\s+'
     'captures':
       '1':
         'name': 'keyword.control.import.include.harbour'
@@ -279,7 +283,7 @@
 
   # if, define, else ...
   {
-    'begin': '^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef)\\b'
+    'begin': '^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|endif|line|pragma|undef|command|xcommand|translate|xtranslate)\\b'
     'captures':
       '1':
         'name': 'keyword.control.import.harbour'
@@ -305,7 +309,7 @@
     'name': 'keyword.operator.assignment.harbour'
    }
    {
-    'match': '(\\<=|>=|==|!=|!|\\<>|\\<|>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s)'
+    'match': '(\\<=|>=|==|!=|!|\\<>|\\<|>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s|\\s\\.NOT\\.\\s)'
     'name': 'keyword.operator.comparison.harbour'
    }
 
@@ -313,7 +317,7 @@
   {
     'comment': 'Standard library macro'
     'name': 'support.function.std.harbour'
-    'match': '\\b(log_write|pp|to_str|TRIM|Trim|Padr|PADR)!'
+    'match': '\\b(log_write|pp|to_str|RTrim|TRIM|Trim|PadR|Padr|PADR|PadC|PadL)!'
   }
 
   {
@@ -349,7 +353,7 @@
   # Function definition
   {
     'comment': 'Function definition'
-    'begin': '\\b(FUNCTION|STATIC FUNCTION)\\s+([a-zA-Z_][a-zA-Z0-9_]*)'
+    'begin': '\\b(FUNCTION|STATIC FUNCTION|PROCEDURE|STATIC PROCEDURE|INIT PROCEDURE|EXIT PROCEDURE)\\s+([a-zA-Z_][a-zA-Z0-9_]*)'
     'end': '[\\n]'
     'beginCaptures': {
       '1': { 'name': 'keyword.other.fn.harbour' }
@@ -384,7 +388,7 @@
   # Method definition
   {
    'comment': 'Method definition'
-   'begin': '\\b(METHOD|STATIC METHOD)\\s+((?:(?:[a-zA-Z_][a-zA-Z0-9_]*):)?(?:[a-zA-Z_][a-zA-Z0-9_]*))'
+   'begin': '\\b(METHOD|STATIC METHOD|METHOD PROCEDURE)\\s+((?:(?:[a-zA-Z_][a-zA-Z0-9_]*):)?(?:[a-zA-Z_][a-zA-Z0-9_]*))'
    'end': '[\\n]'
    'beginCaptures': {
      '1': { 'name': 'keyword.method.fn.harbour' }
