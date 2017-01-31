@@ -39,7 +39,7 @@
   'line_alt1_comment': {
     'comment': 'Single-line comment'
     'name': 'comment.line.star.harbour'
-    'match': '\\*.*$'
+    'match': '^\s*\\*.*$'
   }
  'line_alt2_comment': {
     'comment': 'Single-line comment'
