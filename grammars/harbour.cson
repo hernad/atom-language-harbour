@@ -55,7 +55,6 @@
       'end': '"'
       # TOFIX: String parsing will fail on this string: "\"
       'patterns': [
-        { 'include': '#escaped_character' }
       ]
   }
 
