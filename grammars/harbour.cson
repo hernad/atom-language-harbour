@@ -36,6 +36,11 @@
     'name': 'comment.line.double-slash.harbour'
     'match': '//.*$'
   }
+  'line_Ampersand_comment': {
+    'comment': 'Single-line comment'
+    'name': 'comment.line.double-slash.harbour'
+    'match': '&&.*$'
+  }
   'line_asterisk_comment': {
       'comment': 'Single-line comment'
       'name': 'comment.line.star.harbour'
@@ -44,7 +49,7 @@
   'line_note_comment': {
      'comment': 'Single-line note comment'
      'name': 'comment.line.note.harbour'
-     'match': 'NOTE\\s.*$'
+     'match': '^\\s*NOTE\\s.*$'
   }
   'escaped_character': {
     'name': 'constant.character.escape.harbour'
@@ -92,6 +97,9 @@
     'patterns': [
       { 'include': '#block_comment' }
       { 'include': '#line_comment' }
+      { 'include': '#line_Ampersand_comment' }
+      { 'include': '#line_asterisk_comment' }
+      { 'include': '#line_note_comment' }
       { 'include': '#sigils' }
       { 'include': '#types' }
       { 'include': '#std_types' }
@@ -107,6 +115,7 @@
   { 'include': '#block_comment' }
   { 'include': '#line_doc_comment' }
   { 'include': '#line_comment' }
+  { 'include': '#line_Ampersand_comment' }
   { 'include': '#line_asterisk_comment' }
   { 'include': '#line_note_comment' }
   { 'include': '#sigils' }
