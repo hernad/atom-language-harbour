@@ -41,11 +41,6 @@
     'name': 'comment.line.star.harbour'
     'match': '^\s*\\*.*$'
   }
- 'line_alt2_comment': {
-    'comment': 'Single-line comment type 2'
-    'name': 'comment.line.double-ampersand.harbour'
-    'match': '[&]{2}.*$'
-  }
  'line_alt3_comment': {
     'comment': 'Single-line comment type 3'
     'name': 'comment.line.note.harbour'
