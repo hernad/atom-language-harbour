@@ -84,21 +84,6 @@
     'match': '\\b(NIL|nil)\\b'
   }
 
-  'type_params': {
-    'comment': 'Type parameters'
-    'name': 'meta.type_params.harbour'
-    'begin': '<'
-    'end': '>'
-    'patterns': [
-      { 'include': '#block_comment' }
-      { 'include': '#line_comment' }
-      { 'include': '#sigils' }
-      { 'include': '#types' }
-      { 'include': '#std_types' }
-      { 'include': '#lifetime' }
-      { 'include': '#type_params' }
-    ]
-  }
 }
 
 'patterns': [
