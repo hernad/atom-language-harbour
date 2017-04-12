@@ -108,7 +108,7 @@
   { 'include': '#line_doc_comment' }
   { 'include': '#line_comment' }
   { 'include': '#line_asterisk_comment' }
-  #{ 'include': '#line_note_comment' }
+  { 'include': '#line_note_comment' }
   { 'include': '#sigils' }
   # Attributes
   {
