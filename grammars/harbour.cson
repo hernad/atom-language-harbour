@@ -88,25 +88,6 @@
     'name': 'variable.nil.language.harbour'
     'match': '\\b(NIL|nil)\\b'
   }
-
-  'type_params': {
-    'comment': 'Type parameters'
-    'name': 'meta.type_params.harbour'
-    'begin': '<'
-    'end': '>'
-    'patterns': [
-      { 'include': '#block_comment' }
-      { 'include': '#line_comment' }
-      { 'include': '#line_Ampersand_comment' }
-      { 'include': '#line_asterisk_comment' }
-      { 'include': '#line_note_comment' }
-      { 'include': '#sigils' }
-      { 'include': '#types' }
-      { 'include': '#std_types' }
-      { 'include': '#lifetime' }
-      { 'include': '#type_params' }
-    ]
-  }
 }
 
 'patterns': [
@@ -282,17 +263,6 @@
             'name': 'punctuation.definition.string.end.harbour'
         'name': 'string.quoted.double.include.harbour'
       }
-      {
-        'begin': '<'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.harbour'
-        'end': '>'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.harbour'
-        'name': 'string.quoted.other.lt-gt.include.harbour'
-      }
     ]
   }
 
@@ -324,7 +294,7 @@
     'name': 'keyword.operator.assignment.harbour'
    }
    {
-    'match': '(\\<=|>=|==|!=|!|\\<>|\\<|>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s|\\s\\.NOT\\.\\s)'
+    'match': '(\\<|\\<=|\\>=|==|!=|!|\\<\\>|\\>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s|\\s\\.NOT\\.\\s)'
     'name': 'keyword.operator.comparison.harbour'
    }
 
@@ -332,7 +302,7 @@
   {
     'comment': 'Standard library macro'
     'name': 'support.function.std.harbour'
-    'match': '\\b(log_write|pp|to_str|RTrim|TRIM|Trim|PadR|Padr|PADR|PadC|PadL)!'
+    'match': '\\b(log_write|pp|to_str|RTrim|TRIM|Trim|PadR|Padr|PADR|PadC|PadL|Space)!'
   }
 
   {
