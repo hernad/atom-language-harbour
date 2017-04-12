@@ -304,7 +304,7 @@
     'name': 'keyword.operator.assignment.harbour'
    }
    {
-    'match': '(\\<|\\<=|>=|==|!=|!|\\<\\>|\\>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s|\\s\\.NOT\\.\\s)'
+    'match': '(\\<|\\<=|\\>=|==|!=|!|\\<\\>|\\>|\\$|\\s\\.OR\\.\\s|\\s\\.AND\\.\\s|\\s\\.NOT\\.\\s)'
     'name': 'keyword.operator.comparison.harbour'
    }
 
@@ -312,7 +312,7 @@
   {
     'comment': 'Standard library macro'
     'name': 'support.function.std.harbour'
-    'match': '\\b(log_write|pp|to_str|RTrim|TRIM|Trim|PadR|Padr|PADR|PadC|PadL)!'
+    'match': '\\b(log_write|pp|to_str|RTrim|TRIM|Trim|PadR|Padr|PADR|PadC|PadL|Space)!'
   }
 
   {
