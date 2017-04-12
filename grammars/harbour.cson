@@ -37,9 +37,14 @@
     'match': '//.*$'
   }
   'line_asterisk_comment': {
-    'comment': 'Single-line comment'
-    'name': 'comment.line.star.harbour'
-    'match': '^\s*\\*.*$'
+      'comment': 'Single-line comment'
+      'name': 'comment.line.star.harbour'
+      'match': '^\\s*\*.*$'
+  }
+  'line_note_comment': {
+     'comment': 'Single-line note comment'
+     'name': 'comment.line.note.harbour'
+     'match': 'NOTE\\s.*$'
   }
   'escaped_character': {
     'name': 'constant.character.escape.harbour'
@@ -103,7 +108,7 @@
   { 'include': '#line_doc_comment' }
   { 'include': '#line_comment' }
   { 'include': '#line_asterisk_comment' }
-  #{ 'include': '#line_note_comment' }
+  { 'include': '#line_note_comment' }
   { 'include': '#sigils' }
   # Attributes
   {
