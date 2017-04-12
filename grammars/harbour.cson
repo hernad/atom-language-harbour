@@ -273,17 +273,6 @@
             'name': 'punctuation.definition.string.end.harbour'
         'name': 'string.quoted.double.include.harbour'
       }
-      {
-        'begin': '<'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.harbour'
-        'end': '>'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.harbour'
-        'name': 'string.quoted.other.lt-gt.include.harbour'
-      }
     ]
   }
 
