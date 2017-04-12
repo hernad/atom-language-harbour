@@ -36,7 +36,7 @@
     'name': 'comment.line.double-slash.harbour'
     'match': '//.*$'
   }
-  'line_alt1_comment': {
+  'line_asterisk_comment': {
     'comment': 'Single-line comment'
     'name': 'comment.line.star.harbour'
     'match': '^\s*\\*.*$'
@@ -45,13 +45,11 @@
     'name': 'constant.character.escape.harbour'
     'match': '\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
   }
-
   'sigils': {
     'comment': 'Sigil'
     'name': 'keyword.operator.sigil.harbou'
     'match': '[@]|[:]{2}|[+]{2}(?=[a-zA-Z0-9_\\(\\[\\|\\"]+)'
   }
-
   'string_literal': {
       'comment': 'Double-quote string'
       'name': 'string.quoted.double.harbour'
@@ -61,7 +59,6 @@
       'patterns': [
       ]
   }
-
 
   'std_types': {
     'comment': 'Standard library type'
@@ -105,9 +102,8 @@
   { 'include': '#block_comment' }
   { 'include': '#line_doc_comment' }
   { 'include': '#line_comment' }
-  { 'include': '#line_alt1_comment' }
-  { 'include': '#line_alt2_comment' }
-  { 'include': '#line_alt3_comment' }
+  { 'include': '#line_asterisk_comment' }
+  #{ 'include': '#line_note_comment' }
   { 'include': '#sigils' }
   # Attributes
   {
@@ -179,7 +175,6 @@
     'name': 'constant.language.keyboard.harbour'
     'match': '(K_DOWN|K_PGDN|K_CTRL_PGDN|K_UP|K_PGUP|K_CTRL_PGUP|K_RIGHT|K_LEFT|K_HOME|K_END|K_CTRL_LEFT|K_CTRL_RIGHT|K_CTRL_HOME|K_CTRL_END)'
   }
-
 
 
   {
