@@ -261,6 +261,18 @@
     ]
   }
 
+  {
+      'begin': '<'
+      'beginCaptures':
+         '0':
+            'name': 'punctuation.definition.string.begin.harbour'
+      'end': '>'
+      'endCaptures':
+         '0':
+           'name': 'punctuation.definition.string.end.harbour'
+      'name': 'string.quoted.other.lt-gt.include.harbour'
+  }
+
   # if, define, else ...
   {
     'begin': '^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|endif|line|pragma|undef|command|xcommand|translate|xtranslate)\\b'
