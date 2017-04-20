@@ -88,6 +88,7 @@
     'name': 'variable.nil.language.harbour'
     'match': '\\b(NIL|nil)\\b'
   }
+
 }
 
 'patterns': [
@@ -197,25 +198,25 @@
   {
     'comment': 'Control keyword'
     'name': 'keyword.control.harbour'
-    'match': '\\b(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|EACH|IN|TO|STEP|DESCEND|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|OTHERWISE|ENDSWITCH|RETURN|ENDCLASS|VAR|DATA|INIT|WHILE|DO WHILE|ENDDO|BEGIN SEQUENCE|END SEQUENCE|RECOVER USING|WITH|BREAK|PARAMETERS|END|REQUEST|ANNOUNCE)\\b'
+    'match': '\\b(?i)(EXIT|ELSEIF|ELSE|IF|ENDIF|FOR|EACH|IN|TO|STEP|DESCEND|NEXT|LOOP|DO CASE|ENDCASE|SWITCH|CASE|OTHERWISE|ENDSWITCH|RETURN|ENDCLASS|VAR|DATA|INIT|WHILE|DO WHILE|ENDDO|BEGIN SEQUENCE|END SEQUENCE|RECOVER USING|WITH|BREAK|PARAMETERS|END|REQUEST|ANNOUNCE)\\b'
   }
 
   {
     'comment': 'xBase keywords'
     'name': 'keyword.command.xbase.harbour'
-    'match': '\\b(GO TOP|SELECT|SAY|GET|PICTURE|SEEK|REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
+    'match': '\\b(?i)(GO TOP|SELECT|SAY|GET|PICTURE|SEEK|REPLACE|APPEND BLANK|USE|INDEX ON|TAG)\\b'
   }
 
   {
     'comment': 'xBase keywords'
     'name': 'keyword.command.xbase.harbour'
     # TOFIX: These don't seem like Harbour related syntax
-    'match': '\\b(HSEEK|RREPLACE|START PRINT|ENDPRINT)\\b'
+    'match': '\\b(?i)(HSEEK|RREPLACE|START PRINT|ENDPRINT)\\b'
   }
   {
     'comment': 'Keyword'
     'name': 'keyword.other.harbour'
-    'match': '\\b(LOCAL|PRIVATE|PROTECTED|PUBLIC|FIELD|field|MEMVAR)\\b'
+    'match': '\\b(?i)(LOCAL|PRIVATE|PROTECTED|PUBLIC|FIELD|field|MEMVAR)\\b'
   }
 
 
@@ -266,9 +267,10 @@
     ]
   }
 
+
   # if, define, else ...
   {
-    'begin': '^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|endif|line|pragma|undef|command|xcommand|translate|xtranslate)\\b'
+    'begin': '(?i)^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|endif|line|pragma|undef|command|xcommand|translate|xtranslate)\\b'
     'captures':
       '1':
         'name': 'keyword.control.import.harbour'
@@ -290,7 +292,7 @@
   # }
 
    {
-    'match': '(:=|->|\\+=|-=)'
+    'match': '(:=|-\\>|\\+=|-=)'
     'name': 'keyword.operator.assignment.harbour'
    }
    {
@@ -302,7 +304,7 @@
   {
     'comment': 'Standard library macro'
     'name': 'support.function.std.harbour'
-    'match': '\\b(log_write|pp|to_str|RTrim|TRIM|Trim|PadR|Padr|PADR|PadC|PadL|Space)!'
+    'match': '\\b(?i)(log_write|pp|to_str|RTrim|TRIM|Trim|PadR|Padr|PADR|PadC|PadL|Space)!'
   }
 
   {
@@ -338,7 +340,7 @@
   # Function definition
   {
     'comment': 'Function definition'
-    'begin': '\\b(FUNCTION|STATIC FUNCTION|PROCEDURE|STATIC PROCEDURE|INIT PROCEDURE|EXIT PROCEDURE)\\s+([a-zA-Z_][a-zA-Z0-9_]*)'
+    'begin': '\\b(?i)((?:(?:static|init|exit)\\s+)?(?:func(?:t(?:i(?:o(?:n)?)?)?)?|PROC(?:E(?:D(?:U(?:R(?:E)?)?)?)?)?))\\s+([a-zA-Z_][a-zA-Z0-9_]*)'
     'end': '[\\n]'
     'beginCaptures': {
       '1': { 'name': 'keyword.other.fn.harbour' }
@@ -356,7 +358,7 @@
   #  CREATE CLASS MyServer INHERIT TPQServer
   {
    'comment': 'CLASS definition'
-   'begin': '\\b((?:CREATE\\s+)?(?:CLASS))\\s+([a-zA-Z_][a-zA-Z0-9_]*)(?:\\s+(INHERIT)\\s+([a-zA-Z_][a-zA-Z0-9_]*))?'
+   'begin': '\\b(?i)((?:CREATE\\s+)?(?:CLASS))\\s+([a-zA-Z_][a-zA-Z0-9_]*)(?:\\s+(INHERIT)\\s+([a-zA-Z_][a-zA-Z0-9_]*))?'
    'end': '[\\n]'
    'beginCaptures': {
      '1': { 'name': 'keyword.class.harbour' }
@@ -373,7 +375,7 @@
   # Method definition
   {
    'comment': 'Method definition'
-   'begin': '\\b(METHOD|STATIC METHOD|METHOD PROCEDURE)\\s+((?:(?:[a-zA-Z_][a-zA-Z0-9_]*):)?(?:[a-zA-Z_][a-zA-Z0-9_]*))'
+   'begin': '\\b(?i)(METHOD|STATIC METHOD|METHOD PROCEDURE)\\s+((?:(?:[a-zA-Z_][a-zA-Z0-9_]*):)?(?:[a-zA-Z_][a-zA-Z0-9_]*))'
    'end': '[\\n]'
    'beginCaptures': {
      '1': { 'name': 'keyword.method.fn.harbour' }
